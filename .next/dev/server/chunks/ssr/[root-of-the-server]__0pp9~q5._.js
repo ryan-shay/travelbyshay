@@ -60,7 +60,9 @@ function ThemeNav() {
                 type: "button",
                 className: "theme-toggle",
                 onClick: toggleTheme,
-                children: theme === "dark" ? "Light mode" : "Dark mode"
+                "aria-label": theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+                title: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+                children: theme === "dark" ? "☀" : "☾"
             }, void 0, false, {
                 fileName: "[project]/repos/travelbyshay/app/theme-nav.js",
                 lineNumber: 34,

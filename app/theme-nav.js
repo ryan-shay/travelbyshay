@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ThemeToggleIconButton from "./theme-toggle-icon-button";
 
 function getTimeBasedTheme() {
   const hour = new Date().getHours();
@@ -31,9 +32,7 @@ export default function ThemeNav() {
       <Link href="/about" className="about-link">
         About
       </Link>
-      <button type="button" className="theme-toggle" onClick={toggleTheme}>
-        {theme === "dark" ? "Light mode" : "Dark mode"}
-      </button>
+      <ThemeToggleIconButton isDark={theme === "dark"} onToggle={toggleTheme} darkUi={theme === "dark"} />
     </nav>
   );
 }
