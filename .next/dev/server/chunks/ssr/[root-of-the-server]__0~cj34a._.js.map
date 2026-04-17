@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/ryanshay/repos/travelbyshay/app/page.js"],"sourcesContent":["export default function Home() {\n  return (\n    <main className=\"hero\">\n      <div className=\"hero-content\">\n        <h1>Troy Shay</h1>\n        <p>email: troy.shay@fora.travel</p>\n        <p>phone number: +1 858 519 7047</p>\n        <p className=\"description\">Travel, Yachts, PJs, Security</p>\n      </div>\n    </main>\n  );\n}\n"],"names":["Home","className"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,uQAAC;QAAKC,WAAU;kBACd,cAAA,uQAAC;YAAIA,WAAU;;8BACb,uQAAC;8BAAG;;;;;;8BACJ,uQAAC;8BAAE;;;;;;8BACH,uQAAC;8BAAE;;;;;;8BACH,uQAAC;oBAAEA,WAAU;8BAAc;;;;;;;;;;;;;;;;;AAInC"}}]
+}

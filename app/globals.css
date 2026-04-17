@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.top-nav {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.about-link {
+  color: #111111;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 1rem;
+}
+
+.hero-content p {
+  margin: 0.4rem 0;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+.hero-content .description {
+  margin-top: 1.2rem;
+}
+
+.about-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.about-content {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.about-description {
+  margin: 0;
+  max-width: 42ch;
+  font-size: 1.1rem;
+}

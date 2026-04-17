@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/about/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0wi8czi._.js")
+R.c("server/chunks/ssr/09mz_next_dist_esm_build_templates_app-page_0-glym5.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0cz5038._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__022pgsn._.js")
+R.c("server/chunks/ssr/repos_travelbyshay_app_layout_0p1fmnw.js")
+R.c("server/chunks/ssr/09mz_next_dist_client_components_0s_56va._.js")
+R.c("server/chunks/ssr/09mz_next_dist_client_components_builtin_forbidden_0xzeebo.js")
+R.c("server/chunks/ssr/09mz_next_dist_client_components_builtin_unauthorized_0uonxqm.js")
+R.c("server/chunks/ssr/09mz_next_dist_client_components_builtin_global-error_0r-issi.js")
+R.c("server/chunks/ssr/repos_travelbyshay__next-internal_server_app_about_page_actions_0~ztu6o.js")
+R.m(24423)
+module.exports=R.m(24423).exports

@@ -1,0 +1,3 @@
+module.exports=[73744,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(28814);a.n(d("[project]/repos/travelbyshay/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},97369,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(28814);a.n(d("[project]/repos/travelbyshay/node_modules/next/dist/client/components/builtin/global-error.js"))},69425,a=>{"use strict";a.i(73744);var b=a.i(97369);a.n(b)},82558,a=>{a.n(a.i(69425))}];
+
+//# sourceMappingURL=09mz_next_dist_client_components_builtin_global-error_0r-issi.js.map
