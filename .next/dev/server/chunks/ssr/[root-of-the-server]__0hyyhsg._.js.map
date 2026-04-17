@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/ryanshay/repos/travelbyshay/app/about/page.js"],"sourcesContent":["export default function AboutPage() {\n  return (\n    <main className=\"about-page\">\n      <div className=\"about-content\">\n        <p className=\"about-description\">\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n          eiusmod tempor incididunt ut labore et dolore magna aliqua.\n        </p>\n      </div>\n    </main>\n  );\n}\n"],"names":["AboutPage","className"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,uQAAC;QAAKC,WAAU;kBACd,cAAA,uQAAC;YAAIA,WAAU;sBACb,cAAA,uQAAC;gBAAEA,WAAU;0BAAoB;;;;;;;;;;;;;;;;AAOzC"}}]
-}

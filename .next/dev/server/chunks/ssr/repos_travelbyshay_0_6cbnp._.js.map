@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/ryanshay/repos/travelbyshay/app/layout.js"],"sourcesContent":["import \"./globals.css\";\nimport ThemeNav from \"./theme-nav\";\n\nexport const metadata = {\n  title: \"Troy Shay\",\n  description: \"Travel, Yachts, PJs, Security\",\n};\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <body>\n        <ThemeNav />\n        {children}\n      </body>\n    </html>\n  );\n}\n"],"names":["metadata","title","description","RootLayout","children","lang","ThemeNav"],"mappings":";;;;;;;;;;;;;;;AAGO,MAAMA,WAAW;IACtBC,OAAO;IACPC,aAAa;AACf;AAEe,SAASC,WAAW,EAAEC,QAAQ,EAAE;IAC7C,qBACE,uQAAC;QAAKC,MAAK;kBACT,cAAA,uQAAC;;8BACC,uQAACC;;;;;gBACAF;;;;;;;;;;;;AAIT"}},
-    {"offset": {"line": 54, "column": 0}, "map": {"version":3,"sources":["file:///Users/ryanshay/repos/travelbyshay/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,+IACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
-}
