@@ -1,16 +1,16 @@
 import "./globals.css";
-import ThemeNav from "./theme-nav";
+import Nav from "./nav";
 
 export const metadata = {
-  title: "Troy Shay",
-  description: "Travel, Yachts, PJs, Security",
+  title: "Shay",
+  description: "Luxury Travel",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ThemeNav />
+        <Nav />
         {children}
       </body>
     </html>
