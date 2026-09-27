@@ -105,6 +105,10 @@ export default function Home() {
         <a href="https://cal.com/troyshay" target="_blank" rel="noopener noreferrer">
           Book a call
         </a>
+        <p className="footer-credentials">
+          <span>Virtuoso Member</span>
+          <span>Independent Affiliate of Fora</span>
+        </p>
         <p>© {new Date().getFullYear()} Troy Shay</p>
       </footer>
     </main>
