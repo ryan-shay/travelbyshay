@@ -219,18 +219,24 @@ img {
   scroll-margin-top: 0;
 }
 
-.eyebrow {
-  font-size: 0.66rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--fg-faint);
-  margin-bottom: 24px;
+.about-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+}
+
+.about-role {
+  margin-top: 4px;
+  font-size: 0.98rem;
+  color: var(--fg-dim);
 }
 
 .about-lede {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  line-height: 1.45;
+  margin-top: 32px;
+  font-size: 1.15rem;
+  line-height: 1.6;
   color: var(--fg);
 }
 
@@ -239,6 +245,13 @@ img {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--fg-dim);
+}
+
+.about-close {
+  margin-top: 28px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--fg);
 }
 
 /* ─── Gallery ───────────────────────────────────────────── */

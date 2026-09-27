@@ -62,20 +62,30 @@ export default function Home() {
       </section>
 
       <section id="about" className="about">
-        <Reveal as="p" className="eyebrow">
-          About
+        <Reveal as="h2" className="about-name">
+          Troy Shay
+        </Reveal>
+        <Reveal as="p" className="about-role">
+          Founder, Troy Shay Travel
         </Reveal>
         <Reveal as="p" className="about-lede">
-          Years spent traveling the world and working inside luxury hospitality
-          taught me what separates a good hotel from one that stays with you.
+          The best trips happen when someone else is handling everything behind
+          the scenes. My team and I book and plan every detail of your trip,
+          staying in your corner around the clock so you get to actually enjoy
+          the experience instead of researching it.
         </Reveal>
         <Reveal as="p" className="about-text">
-          I plan hotels, villas, yacht charters, private flights and ground
-          transportation across Four Seasons, Rosewood, Aman, Belmond,
-          Ritz-Carlton, Park Hyatt and beyond. You get the same rate as booking
-          direct, plus breakfast, hotel credits, upgrades and flexible check-in
-          and check-out, at no extra cost. You work with me directly, from the
-          first message to the flight home.
+          We work with luxury hotels, villas, yacht charters, private jets, and
+          private security worldwide, including direct relationships with the
+          world’s leading properties like Four Seasons, Aman, Rosewood, and
+          beyond. Because we work directly with these hotels, you get the same
+          rates you’d find booking yourself, with nothing additional to use us.
+          Years spent traveling and working inside luxury hospitality mean we
+          also know the people on property who’ll actually be taking care of you
+          while you’re there.
+        </Reveal>
+        <Reveal as="p" className="about-close">
+          Tell us where you want to go. We’ll handle the rest.
         </Reveal>
       </section>
 
@@ -101,10 +111,6 @@ export default function Home() {
         <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
         <span aria-hidden="true">·</span>
         <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://cal.com/troyshay" target="_blank" rel="noopener noreferrer">
-          Book a call
-        </a>
         <p className="footer-credentials">
           <span>Virtuoso Member</span>
           <span>Independent Affiliate of Fora</span>
