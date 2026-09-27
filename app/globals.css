@@ -106,6 +106,8 @@ img {
 .card {
   position: relative;
   min-height: 100svh;
+  /* solid on the landing; the aura only shows from the about section down */
+  background: linear-gradient(var(--bg) 88%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;

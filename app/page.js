@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Reveal from "./reveal";
 
-const PHONE_DISPLAY = "+1 858 449 7335";
-const PHONE_HREF = "tel:+18584497335";
+const PHONE_DISPLAY = "+1 858 449 0335";
+const PHONE_HREF = "tel:+18584490335";
 const EMAIL = "info@travelbyshay.com";
 
 const photos = [
@@ -33,13 +33,6 @@ const photos = [
     height: 4032,
     caption: "Montage Los Cabos",
     alt: "Pool at Montage Los Cabos",
-  },
-  {
-    src: "/troy-shay.jpg",
-    width: 4284,
-    height: 5712,
-    caption: "The Ranch at Rock Creek",
-    alt: "Troy Shay at The Ranch at Rock Creek",
   },
 ];
 
@@ -108,6 +101,10 @@ export default function Home() {
         <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
         <span aria-hidden="true">·</span>
         <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://cal.com/troyshay" target="_blank" rel="noopener noreferrer">
+          Book a call
+        </a>
         <p>© {new Date().getFullYear()} Troy Shay</p>
       </footer>
     </main>
