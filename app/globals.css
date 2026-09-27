@@ -148,15 +148,15 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  margin-top: 36px;
+  gap: 0;
+  margin-top: 14px;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   color: var(--fg-dim);
 }
 
 .card-contact a {
-  padding: 4px 0 4px 0.18em;
+  padding: 3px 0 3px 0.18em;
   text-transform: none;
   letter-spacing: 0.14em;
   transition: color 0.3s var(--ease);
