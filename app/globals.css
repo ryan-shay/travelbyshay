@@ -6,7 +6,6 @@
   --line: rgba(243, 239, 232, 0.12);
   --line-strong: rgba(243, 239, 232, 0.24);
   --glow-warm: 214, 178, 120;
-  --glow-cool: 120, 132, 214;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --serif: var(--font-serif), "EB Garamond", Garamond, Georgia, serif;
   --gutter: max(20px, env(safe-area-inset-left));
@@ -84,42 +83,6 @@ img {
   outline: 1px solid rgba(var(--glow-warm), 0.8);
   outline-offset: 4px;
   border-radius: 999px;
-}
-
-/* ─── Aura ──────────────────────────────────────────────── */
-
-.aura {
-  /* sits under everything below the landing card */
-  position: absolute;
-  top: 100svh;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(70vmax 50vmax at 50% 12%, rgba(var(--glow-warm), 0.12), transparent 70%),
-    radial-gradient(50vmax 40vmax at 25% 50%, rgba(var(--glow-cool), 0.08), transparent 70%),
-    radial-gradient(50vmax 40vmax at 75% 85%, rgba(var(--glow-warm), 0.07), transparent 70%);
-  animation: breathe 14s ease-in-out infinite alternate;
-}
-
-.aura::after {
-  /* faint grain so the gradient never bands */
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-@keyframes breathe {
-  0% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /* ─── Business card ─────────────────────────────────────── */
@@ -388,7 +351,6 @@ img {
     scroll-behavior: auto;
   }
 
-  .aura,
   .learn-more svg {
     animation: none;
   }
