@@ -121,49 +121,38 @@ img {
   align-items: center;
 }
 
-.card-name,
-.card-title,
-.card-contact {
-  font-family: var(--serif);
-  text-transform: uppercase;
-}
-
 .card-name {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  letter-spacing: 0.32em;
-  line-height: 1;
-  padding-left: 0.32em; /* optically centre tracked caps */
+  font-variant-caps: small-caps;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+  padding-left: 0.14em; /* optically centre tracked caps */
 }
 
 .card-title {
-  margin-top: 12px;
-  font-size: 0.7rem;
-  letter-spacing: 0.26em;
+  margin-top: 4px;
+  font-size: 0.98rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
   color: var(--fg-dim);
-  padding-left: 0.26em;
 }
 
 .card-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
-  margin-top: 14px;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
   color: var(--fg-dim);
+  font-variant-numeric: lining-nums;
 }
 
 .card-contact a {
-  padding: 3px 0 3px 0.18em;
-  text-transform: none;
-  letter-spacing: 0.14em;
+  padding: 2px 0;
   transition: color 0.3s var(--ease);
-}
-
-.card-contact a:first-child {
-  text-transform: uppercase;
 }
 
 .card-contact a:hover,
@@ -173,12 +162,7 @@ img {
 
 @media (min-width: 720px) {
   .card-name {
-    font-size: 1.2rem;
-  }
-
-  .card-title,
-  .card-contact {
-    font-size: 0.74rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -194,15 +178,11 @@ img {
   align-items: center;
   gap: 4px;
   padding: 8px 16px;
-  font-size: 0.62rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
   color: var(--fg-faint);
   transition: color 0.3s var(--ease);
-}
-
-.learn-more span {
-  padding-left: 0.28em;
 }
 
 .learn-more svg {
