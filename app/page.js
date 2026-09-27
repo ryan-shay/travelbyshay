@@ -43,47 +43,21 @@ const photos = [
   },
 ];
 
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 6-10 7L2 6" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <main>
       <section className="card" aria-label="Contact card">
         <div className="card-body">
-          <h1 className="card-name rise" style={{ "--d": "0.15s" }}>
+          <h1 className="card-name rise" style={{ "--d": "0.2s" }}>
             Troy Shay
           </h1>
-          <p className="card-title rise" style={{ "--d": "0.35s" }}>
+          <p className="card-title rise" style={{ "--d": "0.4s" }}>
             Luxury Travel Concierge
           </p>
-
-          <span className="card-rule rise" style={{ "--d": "0.55s" }} aria-hidden="true" />
-
-          <div className="card-links">
-            <a className="card-link rise" style={{ "--d": "0.7s" }} href={PHONE_HREF}>
-              <PhoneIcon />
-              <span>{PHONE_DISPLAY}</span>
-            </a>
-            <a className="card-link rise" style={{ "--d": "0.85s" }} href={`mailto:${EMAIL}`}>
-              <MailIcon />
-              <span>{EMAIL}</span>
-            </a>
-          </div>
+          <p className="card-contact rise" style={{ "--d": "0.65s" }}>
+            <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </p>
         </div>
 
         <a className="learn-more rise" style={{ "--d": "1.3s" }} href="#about">

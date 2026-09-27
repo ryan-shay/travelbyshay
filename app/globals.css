@@ -8,8 +8,7 @@
   --glow-warm: 214, 178, 120;
   --glow-cool: 120, 132, 214;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
-  --sans: var(--font-sans), "Inter", system-ui, -apple-system, sans-serif;
+  --serif: var(--font-serif), "EB Garamond", Garamond, Georgia, serif;
   --gutter: max(20px, env(safe-area-inset-left));
 }
 
@@ -31,8 +30,8 @@ body {
   min-height: 100svh;
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--sans);
-  font-weight: 300;
+  font-family: var(--serif);
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -108,7 +107,6 @@ img {
   position: relative;
   min-height: 100svh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 72px var(--gutter) 120px;
@@ -121,101 +119,64 @@ img {
   align-items: center;
 }
 
-.card-name {
+.card-name,
+.card-title,
+.card-contact {
   font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(3.1rem, 13vw, 6.25rem);
+  text-transform: uppercase;
+}
+
+.card-name {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
   line-height: 1;
-  letter-spacing: -0.01em;
+  padding-left: 0.32em; /* optically centre tracked caps */
 }
 
 .card-title {
-  margin-top: 18px;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
+  margin-top: 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
   color: var(--fg-dim);
-  padding-left: 0.34em; /* optically centre tracked caps */
+  padding-left: 0.26em;
 }
 
-.card-rule {
-  display: block;
-  width: 44px;
-  height: 1px;
-  margin: 40px 0 36px;
-  background: linear-gradient(90deg, transparent, rgba(var(--glow-warm), 0.7), transparent);
-}
-
-.card-links {
+.card-contact {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 12px;
-  width: min(100%, 300px);
-}
-
-.card-link {
-  position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 52px;
-  padding: 0 24px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.025);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  gap: 2px;
+  margin-top: 36px;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--fg-dim);
+}
+
+.card-contact a {
+  padding: 4px 0 4px 0.18em;
+  text-transform: none;
+  letter-spacing: 0.14em;
+  transition: color 0.3s var(--ease);
+}
+
+.card-contact a:first-child {
+  text-transform: uppercase;
+}
+
+.card-contact a:hover,
+.card-contact a:active {
   color: var(--fg);
-  overflow: hidden;
-  transition:
-    border-color 0.4s var(--ease),
-    background-color 0.4s var(--ease),
-    box-shadow 0.4s var(--ease),
-    transform 0.25s var(--ease);
 }
 
-.card-link::before {
-  /* soft sheen that sweeps across on hover */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
-  transform: translateX(-100%);
-  transition: transform 0.9s var(--ease);
-}
-
-.card-link svg {
-  width: 16px;
-  height: 16px;
-  flex: none;
-  fill: none;
-  stroke: rgba(var(--glow-warm), 0.9);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.card-link:active {
-  transform: scale(0.97);
-}
-
-@media (hover: hover) {
-  .card-link:hover {
-    border-color: rgba(var(--glow-warm), 0.45);
-    background: rgba(var(--glow-warm), 0.06);
-    box-shadow:
-      0 0 0 4px rgba(var(--glow-warm), 0.04),
-      0 10px 40px -10px rgba(var(--glow-warm), 0.35);
+@media (min-width: 720px) {
+  .card-name {
+    font-size: 1.2rem;
   }
 
-  .card-link:hover::before {
-    transform: translateX(100%);
+  .card-title,
+  .card-contact {
+    font-size: 0.74rem;
   }
 }
 
@@ -231,7 +192,7 @@ img {
   align-items: center;
   gap: 4px;
   padding: 8px 16px;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--fg-faint);
@@ -243,11 +204,11 @@ img {
 }
 
 .learn-more svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.5;
+  stroke-width: 1.25;
   stroke-linecap: round;
   stroke-linejoin: round;
   animation: nudge 2.4s var(--ease) 2.2s infinite;
@@ -278,8 +239,8 @@ img {
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(28px);
-    filter: blur(6px);
+    transform: translateY(14px);
+    filter: blur(2px);
   }
   to {
     opacity: 1;
@@ -291,33 +252,32 @@ img {
 /* ─── About ─────────────────────────────────────────────── */
 
 .about {
-  max-width: 620px;
+  max-width: 520px;
   margin: 0 auto;
   padding: 112px var(--gutter) 72px;
   scroll-margin-top: 0;
 }
 
 .eyebrow {
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.34em;
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(var(--glow-warm), 0.85);
-  margin-bottom: 28px;
+  color: var(--fg-faint);
+  margin-bottom: 24px;
 }
 
 .about-lede {
   font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(1.7rem, 6.4vw, 2.4rem);
-  line-height: 1.22;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.45;
   color: var(--fg);
 }
 
 .about-text {
-  margin-top: 28px;
+  margin-top: 20px;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.75;
   color: var(--fg-dim);
 }
 
@@ -338,9 +298,8 @@ img {
 
 .gallery-frame {
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 2px;
   background: #111114;
-  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
 }
 
 .gallery-frame img {
@@ -356,8 +315,8 @@ img {
 }
 
 .gallery-item figcaption {
-  margin-top: 12px;
-  font-size: 0.68rem;
+  margin-top: 10px;
+  font-size: 0.62rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--fg-faint);
@@ -397,7 +356,8 @@ img {
   gap: 8px 14px;
   padding: 40px var(--gutter) max(40px, calc(env(safe-area-inset-bottom) + 24px));
   border-top: 1px solid var(--line);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   color: var(--fg-faint);
   text-align: center;
 }
@@ -419,16 +379,6 @@ img {
 /* ─── Desktop ───────────────────────────────────────────── */
 
 @media (min-width: 720px) {
-  .card-title {
-    font-size: 0.78rem;
-  }
-
-  .card-links {
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
-  }
-
   .about {
     padding-top: 160px;
   }

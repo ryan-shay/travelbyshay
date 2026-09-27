@@ -1,18 +1,11 @@
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import "./globals.css";
 
-const serif = Cormorant_Garamond({
+const serif = EB_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
   variable: "--font-serif",
-  display: "swap",
-});
-
-const sans = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-sans",
   display: "swap",
 });
 
@@ -32,7 +25,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={serif.variable}>
       <body>
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important;filter:none!important}`}</style>
