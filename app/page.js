@@ -39,6 +39,7 @@ const photos = [
 export default function Home() {
   return (
     <main>
+      <div className="aura" aria-hidden="true" />
       <section className="card" aria-label="Contact card">
         <div className="card-body">
           <h1 className="card-name rise" style={{ "--d": "0.2s" }}>

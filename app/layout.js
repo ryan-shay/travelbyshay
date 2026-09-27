@@ -1,10 +1,10 @@
 import { EB_Garamond } from "next/font/google";
 import "./globals.css";
+import Stars from "./stars";
 
 const serif = EB_Garamond({
   subsets: ["latin"],
   weight: ["400", "500"],
-  style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
 });
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important;filter:none!important}`}</style>
         </noscript>
-        <div className="aura" aria-hidden="true" />
+        <Stars />
         {children}
       </body>
     </html>

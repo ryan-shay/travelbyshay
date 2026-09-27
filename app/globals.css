@@ -39,10 +39,29 @@ body {
   overflow-x: hidden;
 }
 
-main,
+main {
+  position: relative;
+  z-index: 1;
+  overflow: clip;
+}
+
+.card,
+.about,
+.gallery,
 .footer {
   position: relative;
   z-index: 1;
+}
+
+/* ─── Stars ─────────────────────────────────────────────── */
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 a {
@@ -70,14 +89,18 @@ img {
 /* ─── Aura ──────────────────────────────────────────────── */
 
 .aura {
-  position: fixed;
-  inset: -20%;
+  /* sits under everything below the landing card */
+  position: absolute;
+  top: 100svh;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(34% 26% at 50% 40%, rgba(var(--glow-warm), 0.16), transparent 72%),
-    radial-gradient(26% 24% at 36% 56%, rgba(var(--glow-cool), 0.10), transparent 72%),
-    radial-gradient(24% 22% at 66% 34%, rgba(var(--glow-warm), 0.08), transparent 72%);
+    radial-gradient(70vmax 50vmax at 50% 12%, rgba(var(--glow-warm), 0.12), transparent 70%),
+    radial-gradient(50vmax 40vmax at 25% 50%, rgba(var(--glow-cool), 0.08), transparent 70%),
+    radial-gradient(50vmax 40vmax at 75% 85%, rgba(var(--glow-warm), 0.07), transparent 70%);
   animation: breathe 14s ease-in-out infinite alternate;
 }
 
@@ -92,11 +115,9 @@ img {
 
 @keyframes breathe {
   0% {
-    transform: scale(1) rotate(0deg);
-    opacity: 0.85;
+    opacity: 0.7;
   }
   100% {
-    transform: scale(1.12) rotate(6deg);
     opacity: 1;
   }
 }
@@ -104,10 +125,7 @@ img {
 /* ─── Business card ─────────────────────────────────────── */
 
 .card {
-  position: relative;
   min-height: 100svh;
-  /* solid on the landing; the aura only shows from the about section down */
-  background: linear-gradient(var(--bg) 88%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +151,6 @@ img {
 .card-title {
   margin-top: 4px;
   font-size: 0.98rem;
-  font-style: italic;
   letter-spacing: 0.01em;
   color: var(--fg-dim);
 }
@@ -179,7 +196,6 @@ img {
   gap: 4px;
   padding: 8px 16px;
   font-size: 0.9rem;
-  font-style: italic;
   letter-spacing: 0.02em;
   color: var(--fg-faint);
   transition: color 0.3s var(--ease);
@@ -250,7 +266,6 @@ img {
 
 .about-lede {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 1.25rem;
   line-height: 1.45;
   color: var(--fg);
