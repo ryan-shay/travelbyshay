@@ -28,11 +28,11 @@ const photos = [
     alt: "Bulgari Tokyo spa pool at night",
   },
   {
-    src: "/cabo-pool.jpg",
-    width: 3024,
-    height: 4032,
-    caption: "Montage Los Cabos",
-    alt: "Pool at Montage Los Cabos",
+    src: "/hotel-dubrovnik.jpg",
+    width: 1200,
+    height: 1600,
+    caption: "Hotel Dubrovnik",
+    alt: "Terrace table overlooking the sea at Hotel Dubrovnik",
   },
 ];
 
