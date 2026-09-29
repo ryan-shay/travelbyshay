@@ -233,25 +233,17 @@ img {
   color: var(--fg-dim);
 }
 
+.about-lede,
+.about-text,
+.about-close {
+  margin-top: 22px;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--fg);
+}
+
 .about-lede {
   margin-top: 32px;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: var(--fg);
-}
-
-.about-text {
-  margin-top: 20px;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--fg-dim);
-}
-
-.about-close {
-  margin-top: 28px;
-  font-size: 1.15rem;
-  line-height: 1.5;
-  color: var(--fg);
 }
 
 /* ─── Gallery ───────────────────────────────────────────── */
