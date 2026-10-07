@@ -1,39 +1,35 @@
 import Image from "next/image";
 import Reveal from "./reveal";
+import Footer, { PHONE_DISPLAY, PHONE_HREF, EMAIL } from "./footer";
 
-const PHONE_DISPLAY = "+1 858 449 0335";
-const PHONE_HREF = "tel:+18584490335";
-const EMAIL = "info@travelbyshay.com";
-
-const photos = [
-  {
-    src: "/ritz-paris.jpg",
-    width: 3024,
-    height: 4032,
-    caption: "Ritz Paris",
-    alt: "Ritz Paris lobby corridor",
-  },
-  {
-    src: "/cabo-beach.jpg",
-    width: 4032,
-    height: 3024,
-    caption: "Montage Los Cabos",
-    alt: "Beach at Montage Los Cabos",
-  },
-  {
-    src: "/bulgari-tokyo.jpg",
-    width: 4284,
-    height: 5712,
-    caption: "Bulgari Tokyo",
-    alt: "Bulgari Tokyo spa pool at night",
-  },
-  {
+const sources = {
+  ritz: { src: "/ritz-paris.jpg", alt: "Ritz Paris lobby corridor" },
+  cabo: { src: "/cabo-beach.jpg", alt: "Beach at Montage Los Cabos" },
+  bulgari: { src: "/bulgari-tokyo.jpg", alt: "Bulgari Tokyo spa pool at night" },
+  dubrovnik: {
     src: "/hotel-dubrovnik.jpg",
-    width: 1200,
-    height: 1600,
-    caption: "Hotel Dubrovnik",
     alt: "Terrace table overlooking the sea at Hotel Dubrovnik",
   },
+};
+
+// Each tile is cropped to `ratio` (width / height); `pos` sets the crop focus.
+// Rows share a height, so the mix of ratios gives the loose, editorial rhythm.
+const photos = [
+  { img: "cabo", ratio: 4 / 3 },
+  { img: "ritz", ratio: 3 / 4 },
+  { img: "bulgari", ratio: 1, pos: "50% 60%" },
+  { img: "dubrovnik", ratio: 3 / 4 },
+  { img: "cabo", ratio: 16 / 9, pos: "50% 70%" },
+  { img: "ritz", ratio: 1, pos: "50% 45%" },
+  { img: "bulgari", ratio: 3 / 4 },
+  { img: "dubrovnik", ratio: 3 / 2, pos: "50% 35%" },
+  { img: "ritz", ratio: 4 / 5 },
+  { img: "cabo", ratio: 1, pos: "40% 50%" },
+  { img: "bulgari", ratio: 7 / 5, pos: "50% 55%" },
+  { img: "dubrovnik", ratio: 4 / 5 },
+  { img: "cabo", ratio: 4 / 5, pos: "60% 50%" },
+  { img: "ritz", ratio: 4 / 3, pos: "50% 55%" },
+  { img: "bulgari", ratio: 4 / 5 },
 ];
 
 export default function Home() {
@@ -90,33 +86,30 @@ export default function Home() {
       </section>
 
       <section className="gallery" aria-label="Gallery">
-        {photos.map((p, i) => (
-          <Reveal as="figure" key={p.src} className="gallery-item" delay={(i % 2) * 0.08}>
-            <div className="gallery-frame">
+        {photos.map((p, i) => {
+          const { src, alt } = sources[p.img];
+          return (
+            <Reveal
+              as="figure"
+              key={i}
+              className="gallery-item"
+              delay={(i % 4) * 0.06}
+              style={{ "--r": p.ratio }}
+            >
               <Image
-                src={p.src}
-                alt={p.alt}
-                width={p.width}
-                height={p.height}
-                sizes="(min-width: 900px) 440px, (min-width: 600px) 45vw, 92vw"
-                quality={80}
+                src={src}
+                alt={alt}
+                fill
+                sizes="(min-width: 900px) 300px, 40vw"
+                quality={75}
+                style={{ objectPosition: p.pos || "50% 50%" }}
               />
-            </div>
-            <figcaption>{p.caption}</figcaption>
-          </Reveal>
-        ))}
+            </Reveal>
+          );
+        })}
       </section>
 
-      <footer className="footer">
-        <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
-        <span aria-hidden="true">·</span>
-        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-        <p className="footer-credentials">
-          <span>Virtuoso Member</span>
-          <span>Independent Affiliate of Fora</span>
-        </p>
-        <p>© {new Date().getFullYear()} Troy Shay</p>
-      </footer>
+      <Footer />
     </main>
   );
 }
