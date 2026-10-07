@@ -34,7 +34,7 @@ export default function Stars() {
           base: 0.12 + depth * 0.38,
           speed: 1.5 + depth * 5, // px per second
           phase: Math.random() * Math.PI * 2,
-          twinkle: 0.4 + Math.random() * 1.2,
+          twinkle: 0.6 + Math.random() * 1.6,
         };
       });
     }
@@ -50,7 +50,7 @@ export default function Stars() {
           if (s.x < -2) s.x = w + 2;
           if (s.y < -2) s.y = h + 2;
         }
-        const a = still ? s.base : s.base * (0.65 + 0.35 * Math.sin(t / 1000 * s.twinkle + s.phase));
+        const a = still ? s.base : s.base * (0.7 + 0.45 * Math.sin(t / 1000 * s.twinkle + s.phase));
         ctx.globalAlpha = a;
         ctx.fillStyle = "#f3efe8";
         ctx.beginPath();

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // Fades children up into view the first time they scroll on screen.
-export default function Reveal({ as: Tag = "div", className = "", delay = 0, children, ...rest }) {
+export default function Reveal({ as: Tag = "div", className = "", delay = 0, style, children, ...rest }) {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
 
@@ -30,7 +30,7 @@ export default function Reveal({ as: Tag = "div", className = "", delay = 0, chi
     <Tag
       ref={ref}
       className={`reveal ${shown ? "is-shown" : ""} ${className}`.trim()}
-      style={{ "--d": `${delay}s` }}
+      style={{ "--d": `${delay}s`, ...style }}
       {...rest}
     >
       {children}
