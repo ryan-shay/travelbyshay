@@ -37,7 +37,10 @@ export default function Home() {
           <p className="card-title rise" style={{ "--d": "0.4s" }}>
             Luxury Travel Concierge
           </p>
-          <p className="card-contact rise" style={{ "--d": "0.65s" }}>
+          <p className="card-inquiry rise" style={{ "--d": "0.55s" }}>
+            Make an inquiry below
+          </p>
+          <p className="card-contact rise" style={{ "--d": "0.7s" }}>
             <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
@@ -65,8 +68,8 @@ export default function Home() {
           the experience instead of researching it.
         </Reveal>
         <Reveal as="p" className="about-text">
-          We work with luxury hotels, villas, yacht charters, private jets, and
-          private security worldwide, including direct relationships with the
+          We work with luxury hotels, villas, yacht charters, and private jets
+          worldwide, including direct relationships with the
           world’s leading properties like Four Seasons, Aman, Rosewood, and
           beyond. Because we work directly with these hotels, you get the same
           rates you’d find booking yourself, with nothing additional to use us.

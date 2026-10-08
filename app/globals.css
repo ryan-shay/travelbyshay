@@ -117,6 +117,15 @@ img {
   color: var(--fg-dim);
 }
 
+.card-inquiry {
+  margin-top: 14px;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  padding-left: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
 .card-contact {
   display: flex;
   flex-direction: column;
