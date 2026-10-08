@@ -1,84 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
-import Footer, { PHONE_DISPLAY, PHONE_HREF, EMAIL, SITE } from "../footer";
+import Footer, { PHONE_HREF, EMAIL, SITE } from "../footer";
 import PrintButton from "./print-button";
 
 export const metadata = {
-  title: "An Invitation — Troy Shay Travel",
+  title: "Partnership Overview — Troy Shay Travel",
   description:
-    "An invitation to partner with Troy Shay Travel, a luxury travel concierge working by referral only.",
+    "A partnership overview from Troy Shay Travel, a luxury travel concierge working by referral only.",
 };
 
-const clientGroups = [
-  [
-    "Families and family offices",
-    "Milestone journeys, multigenerational gatherings and the details that surround them.",
-  ],
-  [
-    "Corporate and executive clients",
-    "Senior leaders and their teams, for whom time and discretion matter above all.",
-  ],
-];
-
-const programs = [
-  "Aman Travel Advisor Program",
-  "Belmond Bellini Club",
-  "Dorchester Diamond Club",
-  "Four Seasons Preferred Partner (FSPP)",
-  "Hilton for Luxury (Waldorf Astoria, LXR, Conrad)",
-  "Hyatt Privé (Park Hyatt, Andaz, Alila, Thompson)",
-  "Mandarin Oriental Fan Club",
-  "Marriott STARS & Luminous (Ritz-Carlton, St. Regis, Bulgari, W Hotels)",
-  "Oetker Collection Pearl Partner",
-  "Peninsula PenClub",
-  "Rocco Forte Knights",
-  "Rosewood Elite",
-];
+// The overview can be personalized per partner with a link such as
+// /partnerships?for=Prestige%20Motors&name=James, which fills "Prepared for"
+// on the cover and the letter's greeting. Without them it reads generically.
+function cleanParam(value) {
+  const v = Array.isArray(value) ? value[0] : value;
+  return typeof v === "string" ? v.trim().slice(0, 80) : "";
+}
 
 const perks = [
-  [
-    "With every booking",
-    [
-      "Complimentary daily breakfast",
-      "$100 hotel credit",
-      "Room upgrade, subject to availability",
-      "Early check-in and late check-out",
-    ],
-  ],
-  [
-    "At many properties",
-    [
-      "Third or fourth night complimentary",
-      "Complimentary transfers",
-      "Spa treatments",
-    ],
-  ],
+  "Complimentary breakfast",
+  "A $100 hotel credit",
+  "Room upgrade on arrival, based on availability",
+  "Early check in and late check out",
 ];
 
-const referrerBenefits = [
-  [
-    "A gesture that reflects well on you.",
-    "A thoughtful, memorable gift or introduction that clients associate with your name.",
-  ],
-  [
-    "Nothing asked of you.",
-    "An introduction is all that is required. We handle everything from there, and your client never has to chase anyone.",
-  ],
-  [
-    "Complete discretion.",
-    "We never contact anyone without an introduction, and we never share who introduced whom.",
-  ],
-];
-
-const process = [
-  ["Introduction", "You introduce a client, or present our offer at the moment that suits you."],
-  ["A personal first conversation", "Troy speaks with the client directly, at their convenience, to understand how they like to travel."],
-  ["Planning and booking", "We arrange every detail, from hotels and villas to yachts, jets and ground logistics, with nothing for you or the client to manage."],
-  ["During the stay", "We remain available to the client every step of the way, day or night, for any adjustment or request."],
-  ["Afterward", "We follow up on the experience and keep you informed."],
-];
-
-export default function Partnerships() {
+export default async function Partnerships({ searchParams }) {
+  const params = await searchParams;
+  const preparedFor = cleanParam(params?.for);
+  const greetingName = cleanParam(params?.name) || "Partner";
   const year = new Date().getFullYear();
 
   return (
@@ -100,38 +49,43 @@ export default function Partnerships() {
           <header className="doc-cover">
             <p className="doc-mark">Troy Shay Travel</p>
             <p className="doc-kicker">By Introduction</p>
-            <h1 className="doc-title">An Invitation</h1>
-            <p className="doc-sub">A relationship for the few we choose to build</p>
-            <dl className="doc-meta">
+            <h1 className="doc-title">Partnership Overview</h1>
+            <p className="doc-sub">
+              <em>Exceptional travel for the clients you look after</em>
+            </p>
+            <dl className={`doc-meta${preparedFor ? "" : " doc-meta-single"}`}>
+              {preparedFor && (
+                <div>
+                  <dt>Prepared for</dt>
+                  <dd>{preparedFor}</dd>
+                </div>
+              )}
               <div>
                 <dt>Prepared by</dt>
                 <dd>Troy Shay, Founder</dd>
               </div>
-              <div>
-                <dt>Edition</dt>
-                <dd>{year}</dd>
-              </div>
-              <div>
-                <dt>Affiliations</dt>
-                <dd>Virtuoso Member</dd>
-              </div>
             </dl>
+            <p className="doc-edition">{year} · Virtuoso Member</p>
           </header>
-          <div className="doc-partners">
-            <Image
-              src="/partner-montage.png"
-              alt="Montage Hotels & Resorts"
-              width={1363}
-              height={526}
-              className="doc-partner-montage"
-            />
-            <Image
-              src="/partner-st-regis.png"
-              alt="St. Regis Hotels & Resorts"
-              width={887}
-              height={718}
-              className="doc-partner-st-regis"
-            />
+          <div className="doc-cover-foot">
+            <p className="doc-partners-label">Hotel Partners</p>
+            <div className="doc-partners">
+              <Image
+                src="/partner-montage.png"
+                alt="Montage Hotels & Resorts"
+                width={1363}
+                height={526}
+                className="doc-partner-montage"
+              />
+              <Image
+                src="/partner-st-regis.png"
+                alt="St. Regis Hotels & Resorts"
+                width={887}
+                height={718}
+                className="doc-partner-st-regis"
+              />
+            </div>
+            <p className="doc-cover-site">{SITE}</p>
           </div>
         </div>
 
@@ -141,62 +95,46 @@ export default function Partnerships() {
             <h2>
               <span className="doc-num">01</span>A Letter from the Founder
             </h2>
-            <p>Dear Partner,</p>
+            <p>Dear {greetingName},</p>
             <p>
               Thank you for taking the time to read this. Troy Shay Travel is a
-              luxury travel concierge. We do not advertise. Every client who comes
-              to us arrives by introduction, and we intend to keep it that way.
+              luxury travel concierge. We work by referral only.
             </p>
             <p>
-              I rarely extend an invitation like this one. I am offering it because
-              I believe your clients and ours expect the same standard: attentive,
-              discreet and without compromise. This overview sets out who we serve,
-              what we offer the people you introduce, and how we look after them,
-              and you.
+              Your clients and ours expect the same things: the highest quality,
+              close attention to detail, and an experience that feels as exclusive
+              as the purchase itself.
             </p>
-            <p>I would welcome the chance to speak with you personally.</p>
+            <p>
+              I’m selective about the hotels I work with. Montage and the St.
+              Regis Aspen are the two I’ve chosen, because they share my belief
+              that a stay should be built around the guest. This overview covers
+              who we serve, what we offer those you introduce, and how we take
+              care of them.
+            </p>
+            <p>
+              After reading through, should this feel like a good fit, I’d welcome
+              the chance to continue the conversation.
+            </p>
             <div className="doc-signoff">
               <p>With warm regards,</p>
               <p className="doc-signature">Troy Shay</p>
               <p className="doc-signature-role">Founder, Troy Shay Travel</p>
             </div>
           </section>
-
-          {/* 2 */}
-          <section className="doc-section">
-            <h2>
-              <span className="doc-num">02</span>Who We Serve
-            </h2>
-            <p>
-              We do not advertise. Our clients come to us by referral, and their
-              privacy is the foundation of our work. For that reason we speak about
-              them only in general terms.
-            </p>
-            <div className="doc-grid doc-grid-spaced">
-              {clientGroups.map(([title, body]) => (
-                <div key={title} className="doc-card">
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              ))}
-            </div>
-          </section>
           <p className="doc-folio">2</p>
         </div>
 
         <div className="doc-sheet">
-          {/* 3 */}
+          {/* 2 */}
           <section className="doc-section">
             <h2>
-              <span className="doc-num">03</span>Company Profile
+              <span className="doc-num">02</span>Who We Are
             </h2>
             <p>
-              Troy Shay Travel plans and books luxury travel worldwide for our
-              clients. Our hotel relationships run through the industry’s leading
-              preferred-partner programs, alongside our current partnerships with{" "}
-              <strong>Montage Hotels &amp; Resorts</strong> and{" "}
-              <strong>The St. Regis Aspen Resort</strong>. We also arrange villas,
-              yacht charters and jet charters.
+              Troy Shay Travel is a luxury travel concierge. We plan and book trips
+              worldwide for private families and corporate clients, and everything
+              is handled by Troy Shay and his team.
             </p>
             <table className="doc-facts">
               <tbody>
@@ -207,25 +145,21 @@ export default function Partnerships() {
                 <tr>
                   <th scope="row">Services</th>
                   <td>
-                    Hotels and resorts, villas, yacht charters, jet charters, full
-                    itinerary planning, ground logistics
+                    Hotels and resorts, villas, yachts, private aviation, full
+                    itinerary planning
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">Clientele</th>
-                  <td>By referral only</td>
-                </tr>
-                <tr>
-                  <th scope="row">Reach</th>
-                  <td>Worldwide</td>
-                </tr>
-                <tr>
-                  <th scope="row">Affiliations</th>
-                  <td>Virtuoso Member</td>
+                  <td>Private families and corporate clients</td>
                 </tr>
                 <tr>
                   <th scope="row">Availability</th>
-                  <td>Our team is available 24 hours a day, 7 days a week</td>
+                  <td>Around the clock</td>
+                </tr>
+                <tr>
+                  <th scope="row">Affiliation</th>
+                  <td>Virtuoso Member</td>
                 </tr>
               </tbody>
             </table>
@@ -262,152 +196,80 @@ export default function Partnerships() {
         </div>
 
         <div className="doc-sheet">
-          {/* 4 */}
+          {/* 3 */}
           <section className="doc-section">
             <h2>
-              <span className="doc-num">04</span>Our Strengths
+              <span className="doc-num">03</span>What Your Clients Receive
             </h2>
-            <div className="doc-stack">
-              <div className="doc-card">
-                <h3>Personal attention</h3>
-                <p>
-                  Every client is handled personally by Troy Shay. Preferences,
-                  celebrations and special requests are known before arrival, not
-                  discovered at check-in.
-                </p>
-              </div>
-              <div className="doc-card">
-                <h3>Inside knowledge of luxury hospitality</h3>
-                <p>
-                  Years spent traveling and working within luxury hospitality
-                  shape how we brief properties, set expectations and protect the
-                  guest experience.
-                </p>
-              </div>
-              <div className="doc-card">
-                <h3>Recognized affiliations</h3>
-                <p>
-                  As a Virtuoso Member, we operate within the industry’s leading
-                  preferred-partner programs, including:
-                </p>
-                <ul className="doc-list doc-programs">
-                  {programs.map((p) => (
+            <div className="doc-highlight doc-highlight-lead">
+              <h3>A $1,000 credit for every client</h3>
+              <p>
+                Clients who book through me receive $1,000 toward a future stay at
+                any Montage or at the St. Regis Aspen, on top of everything below.
+              </p>
+            </div>
+            <ol className="doc-numbered">
+              <li>
+                <strong>No planning or booking fees.</strong> Clients pay the
+                hotel’s website rate, and I’m compensated directly by the hotels.
+              </li>
+              <li>
+                <strong>Added perks.</strong> At many properties, this includes:
+                <ul className="doc-list">
+                  {perks.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
                 </ul>
-              </div>
-              <div className="doc-card">
-                <h3>The complete journey</h3>
-                <p>
-                  From the first conversation to the flight home, we arrange every
-                  element, so guests arrive settled and well looked after.
-                </p>
-              </div>
-            </div>
+              </li>
+              <li>
+                <strong>And often more.</strong> Extra touches vary by property
+                and are chosen to suit each stay.
+              </li>
+              <li>
+                <strong>A dedicated team.</strong> Personal service from the first
+                request to the flight home, with someone available around the
+                clock.
+              </li>
+            </ol>
           </section>
           <p className="doc-folio">4</p>
         </div>
 
         <div className="doc-sheet">
-          {/* 5 */}
+          {/* 4 */}
           <section className="doc-section">
             <h2>
-              <span className="doc-num">05</span>What Your Clients Receive
+              <span className="doc-num">04</span>How It Works
             </h2>
-            <p>
-              There is no planning fee and no booking fee. Because of the volume and
-              value of the journeys we arrange, our hotel partners compensate us
-              directly, so your clients pay the hotel’s website rate and receive
-              the following in addition. Every client has one point of contact for
-              the entire journey, someone looking out for their best interests from
-              the first call to the flight home.
-            </p>
-            <div className="doc-grid doc-grid-spaced">
-              {perks.map(([title, items]) => (
-                <div key={title} className="doc-card">
-                  <h3>{title}</h3>
-                  <ul className="doc-list">
-                    {items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            <div className="doc-highlight">
-              <h3>Exclusive to our clients</h3>
-              <p>
-                A <strong>$1,000 USD credit</strong> toward a future stay at any
-                Montage property or The St. Regis Aspen Resort
-              </p>
-            </div>
-          </section>
-          <p className="doc-folio">5</p>
-        </div>
-
-        <div className="doc-sheet">
-          {/* 6 */}
-          <section className="doc-section">
-            <h2>
-              <span className="doc-num">06</span>What You Receive
-            </h2>
-            <ul className="doc-list doc-list-spaced">
-              {referrerBenefits.map(([lead, body]) => (
-                <li key={lead}>
-                  <strong>{lead}</strong> {body}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          {/* 7 */}
-          <section className="doc-section">
-            <h2>
-              <span className="doc-num">07</span>How We Work Together
-            </h2>
-            <ol className="doc-steps">
-              {process.map(([title, body], i) => (
-                <li key={title}>
-                  <span className="doc-step-num">{i + 1}.</span>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{body}</p>
-                  </div>
-                </li>
-              ))}
+            <ol className="doc-numbered">
+              <li>
+                <strong>You mention it</strong> to a client when it feels like a
+                natural fit.
+              </li>
+              <li>
+                <strong>If they’re interested, you connect us</strong> by email.
+              </li>
+              <li>
+                <strong>I take it from there.</strong> I reach out directly, offer
+                the $1,000 credit, and take care of the booking.
+              </li>
             </ol>
-          </section>
-          <p className="doc-folio">6</p>
-        </div>
-
-        <div className="doc-sheet">
-          {/* 8 */}
-          <section className="doc-section">
-            <h2>
-              <span className="doc-num">08</span>Standards & Confidentiality
-            </h2>
-            <p>
-              Our clients trust us with their privacy, and we extend the same
-              discretion to our partners. Client information is shared only as
-              needed to deliver the journey, and the terms of every partnership
-              remain confidential. We represent your name with the same care we
-              give our own.
+            <p className="doc-after-list">
+              There is no cost to you and no commission involved. This works best
+              as a quiet recommendation for the right client, never a blanket
+              offer.
             </p>
           </section>
 
-          {/* 9 */}
+          {/* 5 */}
           <section className="doc-section doc-contact">
             <h2>
-              <span className="doc-num">09</span>Next Steps
+              <span className="doc-num">05</span>Contact
             </h2>
-            <p>
-              If this resonates, I would be glad to speak, or to meet at a time and
-              place that suits you. Please reach out to me directly.
-            </p>
             <address className="doc-address">
               <strong>Troy Shay</strong>
               <span>Founder, Troy Shay Travel</span>
-              <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
+              <a href={PHONE_HREF}>+1 (858) 449-0335</a>
               <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               <a href={`https://${SITE}`}>{SITE}</a>
             </address>
@@ -416,7 +278,7 @@ export default function Partnerships() {
           <p className="doc-colophon">
             © {year} Troy Shay Travel · Virtuoso Member
           </p>
-          <p className="doc-folio">7</p>
+          <p className="doc-folio">5</p>
         </div>
       </article>
 
