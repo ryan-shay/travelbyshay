@@ -397,13 +397,7 @@ img {
     display: none;
   }
 
-  .footer .footer-links {
-  margin-top: 6px;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-}
-
-.footer .footer-credentials {
+  .footer .footer-credentials {
     flex-direction: column;
     align-items: center;
   }
