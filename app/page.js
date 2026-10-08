@@ -42,13 +42,6 @@ export default function Home() {
             <br />
             Thank you for your understanding.
           </p>
-          <a
-            className="card-inquiry rise"
-            style={{ "--d": "0.6s" }}
-            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Travel inquiry")}`}
-          >
-            Make an inquiry
-          </a>
           <p className="card-contact rise" style={{ "--d": "0.7s" }}>
             <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
