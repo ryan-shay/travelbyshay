@@ -14,7 +14,7 @@ const description =
 
 // The link preview image is app/opengraph-image.png (and twitter-image.png).
 export const metadata = {
-  metadataBase: new URL("https://troyshaytravel.com"),
+  metadataBase: new URL("https://www.troyshaytravel.com"),
   title: "Troy Shay — Luxury Travel Concierge",
   description,
   openGraph: {

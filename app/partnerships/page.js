@@ -3,10 +3,25 @@ import Link from "next/link";
 import Footer, { PHONE_HREF, EMAIL, SITE } from "../footer";
 import PrintButton from "./print-button";
 
+// Shared privately with selected companies: not linked from the site and
+// kept out of search results. Anyone with the link can still open it.
 export const metadata = {
   title: "Partnership Overview — Troy Shay Travel",
   description:
     "A partnership overview from Troy Shay Travel, a luxury travel concierge working by referral only.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false, noimageindex: true },
+  },
+  openGraph: {
+    title: "Partnership Overview — Troy Shay Travel",
+    description:
+      "A partnership overview from Troy Shay Travel, a luxury travel concierge working by referral only.",
+    url: "/partnerships",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
+  },
 };
 
 const perks = [
