@@ -238,9 +238,8 @@ export default function Partnerships() {
               </li>
             </ol>
             <p className="doc-after-list">
-              There is no cost to you and no commission involved. This works best
-              as a quiet recommendation for the right client, never a blanket
-              offer.
+              There is no cost to you. This works best as a quiet recommendation
+              for the right client.
             </p>
           </section>
 
