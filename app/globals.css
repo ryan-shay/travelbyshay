@@ -277,17 +277,48 @@ img {
   color: var(--fg-dim);
 }
 
-.about-lede,
-.about-text,
-.about-close {
-  margin-top: 22px;
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: var(--fg);
+.about-quote {
+  margin: 40px 0 0;
+  padding-left: 20px;
+  border-left: 1px solid var(--line-strong);
 }
 
-.about-lede {
-  margin-top: 32px;
+.about-quote p {
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--fg);
+  text-wrap: balance;
+}
+
+.about-heading {
+  margin-top: 44px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+
+/* Body copy uses Source Serif 4: larger letters and sturdier strokes than
+   EB Garamond, so it stays easy to read in light-on-dark paragraphs. */
+.about-text,
+.about-close {
+  margin-top: 18px;
+  font-family: var(--font-text), Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: rgba(243, 239, 232, 0.88);
+}
+
+.about-heading + .about-text {
+  margin-top: 16px;
+}
+
+.about-close {
+  margin-top: 28px;
+  font-style: italic;
+  color: var(--fg);
 }
 
 /* ─── Gallery ───────────────────────────────────────────── */
