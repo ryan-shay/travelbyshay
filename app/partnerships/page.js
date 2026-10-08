@@ -253,8 +253,10 @@ export default function Partnerships() {
               </li>
             </ol>
             <p className="doc-after-list">
-              There is no cost to you. This works best as a quiet recommendation
-              for the right client.
+              There is no cost to you. You know your clients best, so the timing
+              is yours: an upcoming honeymoon, an anniversary, or simply a client
+              who loves to travel well. The credit is presented as a gift from
+              you.
             </p>
           </section>
 
