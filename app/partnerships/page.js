@@ -117,6 +117,22 @@ export default function Partnerships() {
               </div>
             </dl>
           </header>
+          <div className="doc-partners">
+            <Image
+              src="/partner-montage.png"
+              alt="Montage Hotels & Resorts"
+              width={1363}
+              height={526}
+              className="doc-partner-montage"
+            />
+            <Image
+              src="/partner-st-regis.png"
+              alt="St. Regis Hotels & Resorts"
+              width={887}
+              height={718}
+              className="doc-partner-st-regis"
+            />
+          </div>
         </div>
 
         <div className="doc-sheet">
