@@ -217,30 +217,29 @@ export default function Partnerships() {
 
           <div className="doc-figure-pair">
             <figure className="doc-figure">
-              <div className="doc-frame doc-frame-tall">
+              <div className="doc-frame">
                 <Image
-                  src="/cabo-beach.jpg"
-                  alt="Beach at Montage Los Cabos"
+                  src="/montage-laguna-beach.jpg"
+                  alt="Montage Laguna Beach above the cove and the Pacific"
                   fill
-                  sizes="(min-width: 860px) 350px, 45vw"
-                  quality={80}
-                  loading="eager"
+                  sizes="(min-width: 860px) 360px, 45vw"
+                  quality={85}
+                  style={{ objectPosition: "55% 50%" }}
                 />
               </div>
-              <figcaption>Montage Los Cabos</figcaption>
+              <figcaption>Montage Laguna Beach</figcaption>
             </figure>
             <figure className="doc-figure">
-              <div className="doc-frame doc-frame-tall">
+              <div className="doc-frame">
                 <Image
-                  src="/bulgari-tokyo.jpg"
-                  alt="Tokyo skyline from a guest room at Bulgari Tokyo"
+                  src="/st-regis-aspen.jpg"
+                  alt="The St. Regis Aspen Resort in winter, framed by snow-covered trees"
                   fill
-                  sizes="(min-width: 860px) 350px, 45vw"
-                  quality={80}
-                  loading="eager"
+                  sizes="(min-width: 860px) 360px, 45vw"
+                  quality={85}
                 />
               </div>
-              <figcaption>Bulgari Tokyo</figcaption>
+              <figcaption>The St. Regis Aspen Resort</figcaption>
             </figure>
           </div>
           <p className="doc-folio">3</p>
