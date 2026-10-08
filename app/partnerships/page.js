@@ -95,8 +95,8 @@ export default function Partnerships() {
             </h2>
             <p>Dear Partner,</p>
             <p>
-              Thank you for taking the time to read this. Troy Shay Travel is a
-              luxury travel concierge. We work by referral only.
+              Troy Shay Travel is a luxury travel concierge. We work by referral
+              only.
             </p>
             <p>
               Your clients and ours expect the same things: the highest quality,
