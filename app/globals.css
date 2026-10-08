@@ -529,15 +529,41 @@ img {
 }
 
 .doc {
+  display: grid;
+  gap: 28px;
   max-width: 860px;
   margin: 0 auto;
-  padding: 56px 28px 48px;
-  background: var(--paper);
   color: var(--ink);
   font-size: 1.12rem;
   line-height: 1.65;
   font-variant-numeric: lining-nums;
+}
+
+/* One sheet of paper per printed page. On wider screens each sheet keeps
+   letter proportions (8.5 x 11) and grows if its content needs more room. */
+.doc-sheet {
+  display: flex;
+  flex-direction: column;
+  padding: 56px 28px 32px;
+  background: var(--paper);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.doc-sheet > .doc-section:first-child {
+  margin-top: 0;
+}
+
+.doc-sheet-cover {
+  justify-content: center;
+}
+
+.doc-folio {
+  margin-top: auto;
+  padding-top: 40px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  text-align: center;
 }
 
 .doc ::selection {
@@ -547,21 +573,19 @@ img {
 
 @media (min-width: 720px) {
   .doc {
-    padding: 88px 72px 64px;
+    gap: 40px;
+  }
+
+  .doc-sheet {
+    aspect-ratio: 8.5 / 11;
+    padding: 80px 72px 40px;
     border-radius: 2px;
   }
 }
 
 .doc-cover {
   text-align: center;
-  padding: 48px 0 56px;
-  border-bottom: 1px solid var(--rule);
-}
-
-@media (min-width: 720px) {
-  .doc-cover {
-    padding: 96px 0 88px;
-  }
+  padding: 48px 0;
 }
 
 .doc-mark {
@@ -626,7 +650,9 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-top: 48px;
+  width: 100%;
+  max-width: 560px;
+  margin: 48px auto 0;
   break-inside: avoid;
 }
 
@@ -771,20 +797,16 @@ img {
 
 .doc-steps li {
   display: flex;
-  gap: 18px;
+  align-items: baseline;
+  gap: 14px;
   break-inside: avoid;
 }
 
 .doc-step-num {
   flex: none;
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 1rem;
+  min-width: 1.4em;
+  font-size: 1.15rem;
+  color: var(--ink);
 }
 
 .doc-list {
@@ -870,7 +892,7 @@ img {
 }
 
 .doc-colophon {
-  margin-top: 64px;
+  margin-top: 56px;
   padding-top: 20px;
   border-top: 1px solid var(--rule);
   font-size: 0.75rem;
@@ -917,22 +939,28 @@ img {
   }
 
   .doc {
+    display: block;
     max-width: none;
-    padding: 0;
-    box-shadow: none;
-    background: #fff;
     font-size: 11.5pt;
     line-height: 1.5;
   }
 
-  .doc-cover {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 9.2in;
+  /* Each sheet fills one page; the folio sits at the foot of it. */
+  .doc-sheet {
+    aspect-ratio: auto;
+    min-height: 9.7in;
     padding: 0;
+    box-shadow: none;
+    background: #fff;
     break-after: page;
-    border-bottom: 0;
+  }
+
+  .doc-sheet:last-child {
+    break-after: auto;
+  }
+
+  .doc-folio {
+    padding-top: 24px;
   }
 
   .doc-section {
@@ -963,8 +991,7 @@ img {
 
   .doc img,
   .doc-card,
-  .doc-highlight,
-  .doc-step-num {
+  .doc-highlight {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
