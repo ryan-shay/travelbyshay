@@ -18,7 +18,8 @@ export default function Stars() {
     let raf = 0;
     let last = performance.now();
     let meteor = null;
-    let nextMeteor = performance.now() + 6000 + Math.random() * 8000;
+    // The first shooting star comes soon after load, so even a short visit sees one.
+    let nextMeteor = performance.now() + 1500 + Math.random() * 1500;
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -28,19 +29,20 @@ export default function Stars() {
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.round((w * h) / 7000);
+      const count = Math.round((w * h) / 5500);
       stars = Array.from({ length: count }, () => {
         const depth = Math.random(); // 0 = far, 1 = near
         return {
           x: Math.random() * w,
           y: Math.random() * h,
-          r: 0.35 + depth * 0.8,
-          base: 0.16 + depth * 0.46,
+          r: 0.45 + depth * 0.9,
+          base: 0.22 + depth * 0.55,
           speed: 3 + depth * 10, // px per second
           phase: Math.random() * Math.PI * 2,
           twinkle: 0.6 + Math.random() * 1.8,
-          // About 1 in 12 stars sparkles: a brief flare every 10 to 20 seconds.
-          sparkle: Math.random() < 0.08,
+          // About 1 in 8 stars sparkles: a brief flare every 10 to 20 seconds,
+          // with random timing so some flare within the first few seconds.
+          sparkle: Math.random() < 0.12,
           sparkleRate: 0.3 + Math.random() * 0.3,
           sparklePhase: Math.random() * Math.PI * 2,
         };
@@ -64,7 +66,7 @@ export default function Stars() {
         // Sharp, occasional peak: near zero most of the time, briefly 1.
         const flare =
           s.sparkle && !still
-            ? Math.pow(Math.max(0, Math.sin((t / 1000) * s.sparkleRate + s.sparklePhase)), 40)
+            ? Math.pow(Math.max(0, Math.sin((t / 1000) * s.sparkleRate + s.sparklePhase)), 28)
             : 0;
         if (flare > 0.01) {
           a = Math.min(1, a + flare);
@@ -114,20 +116,20 @@ export default function Stars() {
       const p = meteor.life / meteor.span;
       if (p >= 1) {
         meteor = null;
-        nextMeteor = t + 15000 + Math.random() * 15000;
+        nextMeteor = t + 8000 + Math.random() * 7000;
         return;
       }
       const fade = Math.sin(Math.PI * p); // in, then out
-      const tail = 0.16; // seconds of trail
+      const tail = 0.22; // seconds of trail
       const grad = ctx.createLinearGradient(
         meteor.x, meteor.y,
         meteor.x - meteor.vx * tail, meteor.y - meteor.vy * tail
       );
-      grad.addColorStop(0, `rgba(243, 239, 232, ${0.85 * fade})`);
+      grad.addColorStop(0, `rgba(243, 239, 232, ${fade})`);
       grad.addColorStop(1, "rgba(243, 239, 232, 0)");
       ctx.globalAlpha = 1;
       ctx.strokeStyle = grad;
-      ctx.lineWidth = 1.1;
+      ctx.lineWidth = 1.4;
       ctx.lineCap = "round";
       ctx.beginPath();
       ctx.moveTo(meteor.x, meteor.y);
