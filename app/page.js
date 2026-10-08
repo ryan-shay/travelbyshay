@@ -37,7 +37,14 @@ export default function Home() {
           <p className="card-title rise" style={{ "--d": "0.4s" }}>
             Luxury Travel Concierge
           </p>
-          <p className="card-contact rise" style={{ "--d": "0.65s" }}>
+          <a
+            className="card-inquiry rise"
+            style={{ "--d": "0.55s" }}
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Travel inquiry")}`}
+          >
+            Make an inquiry
+          </a>
+          <p className="card-contact rise" style={{ "--d": "0.7s" }}>
             <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
@@ -52,11 +59,21 @@ export default function Home() {
       </section>
 
       <section id="about" className="about">
-        <Reveal as="h2" className="about-name">
-          Troy Shay
-        </Reveal>
-        <Reveal as="p" className="about-role">
-          Founder, Troy Shay Travel
+        <Reveal className="about-byline">
+          <div className="about-portrait">
+            <Image
+              src="/troy-shay.jpg"
+              alt="Portrait of Troy Shay"
+              width={1280}
+              height={1599}
+              sizes="96px"
+              quality={85}
+            />
+          </div>
+          <div>
+            <h2 className="about-name">Troy Shay</h2>
+            <p className="about-role">Founder, Troy Shay Travel</p>
+          </div>
         </Reveal>
         <Reveal as="p" className="about-lede">
           The best trips happen when someone else is handling everything behind
@@ -65,11 +82,12 @@ export default function Home() {
           the experience instead of researching it.
         </Reveal>
         <Reveal as="p" className="about-text">
-          We work with luxury hotels, villas, yacht charters, private jets, and
-          private security worldwide, including direct relationships with the
+          We work with luxury hotels, villas, yacht charters, and private jets
+          worldwide, including direct relationships with the
           world’s leading properties like Four Seasons, Aman, Rosewood, and
-          beyond. Because we work directly with these hotels, you get the same
-          rates you’d find booking yourself, with nothing additional to use us.
+          beyond. Because we work directly with these hotels, you pay the same
+          rate you’d find booking yourself. The hotels compensate us directly, so
+          there’s never a markup or a fee to you.
           Years spent traveling and working inside luxury hospitality mean we
           also know the people on property who’ll actually be taking care of you
           while you’re there.
