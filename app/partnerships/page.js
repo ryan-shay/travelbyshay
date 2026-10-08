@@ -95,24 +95,25 @@ export default function Partnerships() {
             </h2>
             <p>Dear Partner,</p>
             <p>
-              Thank you for taking the time to read this. Troy Shay Travel is a
-              luxury travel concierge. We work by referral only.
+              Troy Shay Travel is a luxury travel concierge, and we work by
+              referral only.
             </p>
             <p>
-              Your clients and ours expect the same things: the highest quality,
-              close attention to detail, and an experience that feels as exclusive
-              as the purchase itself.
+              Over the years I have built close friendships with the people
+              behind some of the world’s finest hotels. Those relationships allow
+              me to offer something personal to the guests you introduce, and I am
+              glad to extend that to you and your clients.
             </p>
             <p>
-              I’m selective about the hotels I work with. Montage and the St.
-              Regis Aspen are the two I’ve chosen, because they share my belief
-              that a stay should be built around the guest. This overview covers
-              who we serve, what we offer those you introduce, and how we take
-              care of them.
+              I am selective about the hotels I work with. Montage and the St.
+              Regis Aspen are the two I have chosen, because they believe, as I
+              do, that a stay should be built around the guest. This overview
+              covers who we are, what we offer, and how we care for the people
+              you trust us with.
             </p>
             <p>
-              After reading through, should this feel like a good fit, I’d welcome
-              the chance to continue the conversation.
+              If it feels like a good fit once you have read through, I would
+              welcome the chance to continue the conversation.
             </p>
             <div className="doc-signoff">
               <p>With warm regards,</p>
