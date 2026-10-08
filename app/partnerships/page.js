@@ -9,14 +9,6 @@ export const metadata = {
     "A partnership overview from Troy Shay Travel, a luxury travel concierge working by referral only.",
 };
 
-// The overview can be personalized per partner with a link such as
-// /partnerships?for=Prestige%20Motors&name=James, which fills "Prepared for"
-// on the cover and the letter's greeting. Without them it reads generically.
-function cleanParam(value) {
-  const v = Array.isArray(value) ? value[0] : value;
-  return typeof v === "string" ? v.trim().slice(0, 80) : "";
-}
-
 const perks = [
   "Complimentary breakfast",
   "A $100 hotel credit",
@@ -24,10 +16,7 @@ const perks = [
   "Early check in and late check out",
 ];
 
-export default async function Partnerships({ searchParams }) {
-  const params = await searchParams;
-  const preparedFor = cleanParam(params?.for);
-  const greetingName = cleanParam(params?.name) || "Partner";
+export default function Partnerships() {
   const year = new Date().getFullYear();
 
   return (
@@ -53,13 +42,7 @@ export default async function Partnerships({ searchParams }) {
             <p className="doc-sub">
               <em>Exceptional travel for the clients you look after</em>
             </p>
-            <dl className={`doc-meta${preparedFor ? "" : " doc-meta-single"}`}>
-              {preparedFor && (
-                <div>
-                  <dt>Prepared for</dt>
-                  <dd>{preparedFor}</dd>
-                </div>
-              )}
+            <dl className="doc-meta">
               <div>
                 <dt>Prepared by</dt>
                 <dd>Troy Shay, Founder</dd>
@@ -95,7 +78,7 @@ export default async function Partnerships({ searchParams }) {
             <h2>
               <span className="doc-num">01</span>A Letter from the Founder
             </h2>
-            <p>Dear {greetingName},</p>
+            <p>Dear Partner,</p>
             <p>
               Thank you for taking the time to read this. Troy Shay Travel is a
               luxury travel concierge. We work by referral only.
