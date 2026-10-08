@@ -103,7 +103,7 @@ img {
 }
 
 .card-name {
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 500;
   font-variant-caps: small-caps;
   letter-spacing: 0.14em;
@@ -112,8 +112,8 @@ img {
 }
 
 .card-title {
-  margin-top: 4px;
-  font-size: 0.98rem;
+  margin-top: 8px;
+  font-size: 1.15rem;
   letter-spacing: 0.01em;
   color: var(--fg-dim);
 }
@@ -132,10 +132,10 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 18px;
-  font-size: 0.9rem;
+  margin-top: 22px;
+  font-size: 1.08rem;
   letter-spacing: 0.04em;
-  line-height: 1.35;
+  line-height: 1.45;
   color: var(--fg-dim);
   font-variant-numeric: lining-nums;
 }
@@ -152,7 +152,15 @@ img {
 
 @media (min-width: 720px) {
   .card-name {
-    font-size: 1.4rem;
+    font-size: 2.5rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-contact {
+    font-size: 1.12rem;
   }
 }
 
