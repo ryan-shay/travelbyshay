@@ -248,25 +248,28 @@ img {
 
 /* ─── Gallery ───────────────────────────────────────────── */
 
-/* Rows share one height; each tile's width follows its ratio, and
-   space-between scatters them across the row like a contact sheet. */
+/* Each row fills the full width. Tiles grow in proportion to their ratio,
+   so every tile in a row ends up the same height with even gaps. */
 .gallery {
-  --row-h: clamp(78px, 12vw, 150px);
+  --gap: clamp(6px, 1vw, 12px);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: calc(var(--row-h) * 0.5) calc(var(--row-h) * 0.28);
-  max-width: 1240px;
+  flex-direction: column;
+  gap: var(--gap);
+  max-width: 1120px;
   margin: 0 auto;
   padding: 40px var(--gutter) 120px;
 }
 
+.gallery-row {
+  display: flex;
+  gap: var(--gap);
+}
+
 .gallery-item {
   position: relative;
-  flex: none;
-  height: var(--row-h);
-  width: calc(var(--row-h) * var(--r, 1));
+  flex: var(--r, 1) 1 0;
+  aspect-ratio: var(--r, 1);
+  margin: 0;
   overflow: hidden;
   background: #111114;
 }
