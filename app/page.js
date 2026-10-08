@@ -38,7 +38,7 @@ export default function Home() {
             Luxury Travel Concierge
           </p>
           <p className="card-note rise" style={{ "--d": "0.5s" }}>
-            We are currently accepting new clients by referral only.
+            We currently welcome new clients by personal referral only.
             <br />
             Thank you for your understanding.
           </p>
