@@ -37,9 +37,14 @@ export default function Home() {
           <p className="card-title rise" style={{ "--d": "0.4s" }}>
             Luxury Travel Concierge
           </p>
+          <p className="card-note rise" style={{ "--d": "0.5s" }}>
+            We are currently accepting new clients by referral only.
+            <br />
+            Thank you for your understanding.
+          </p>
           <a
             className="card-inquiry rise"
-            style={{ "--d": "0.55s" }}
+            style={{ "--d": "0.6s" }}
             href={`mailto:${EMAIL}?subject=${encodeURIComponent("Travel inquiry")}`}
           >
             Make an inquiry
