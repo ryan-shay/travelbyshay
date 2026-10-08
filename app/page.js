@@ -73,22 +73,32 @@ export default function Home() {
             <p className="about-role">Founder, Troy Shay Travel</p>
           </div>
         </Reveal>
-        <Reveal as="p" className="about-lede">
-          The best trips happen when someone else is handling everything behind
-          the scenes. My team and I book and plan every detail of your trip,
-          staying in your corner around the clock so you get to actually enjoy
-          the experience instead of researching it.
+        <Reveal as="blockquote" className="about-quote">
+          <p>
+            “Time is one of life’s most valuable gifts, and my goal is to give
+            it back to you.”
+          </p>
+        </Reveal>
+        <Reveal as="h3" className="about-heading">
+          Time Is Precious
         </Reveal>
         <Reveal as="p" className="about-text">
-          We work with luxury hotels, villas, yacht charters, and private jets
-          worldwide, including direct relationships with the
-          world’s leading properties like Four Seasons, Aman, Rosewood, and
-          beyond. Because we work directly with these hotels, you pay the same
-          rate you’d find booking yourself. The hotels compensate us directly, so
-          there’s never a markup or a fee to you.
-          Years spent traveling and working inside luxury hospitality mean we
-          also know the people on property who’ll actually be taking care of you
-          while you’re there.
+          Troy Shay Travel is a full-service travel concierge. From a weekend
+          getaway to an African safari, every trip receives the same care,
+          because every trip matters.
+        </Reveal>
+        <Reveal as="p" className="about-text">
+          Our team handles every detail, from the first idea to the moment
+          you’re home, and we’re available around the clock while you’re away.
+          That leaves you free to simply enjoy it.
+        </Reveal>
+        <Reveal as="p" className="about-text">
+          We work with luxury hotels, private villas, yacht charters and private
+          jets worldwide, with direct relationships at properties such as Four
+          Seasons, Aman and Rosewood. Because our partners compensate us
+          directly, you pay the same rate you’d find on your own, with no markup
+          and no planning fee. And because we know the people on property, you
+          arrive as a guest they’ve been expecting.
         </Reveal>
         <Reveal as="p" className="about-close">
           Tell us where you want to go. We’ll handle the rest.

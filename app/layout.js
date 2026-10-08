@@ -1,4 +1,4 @@
-import { EB_Garamond } from "next/font/google";
+import { EB_Garamond, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Stars from "./stars";
 
@@ -6,6 +6,15 @@ const serif = EB_Garamond({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+// Body text in the About section: a sturdier serif that reads easily on dark.
+const text = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-text",
   display: "swap",
 });
 
@@ -39,7 +48,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={serif.variable}>
+    <html lang="en" className={`${serif.variable} ${text.variable}`}>
       <body>
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important;filter:none!important}`}</style>
