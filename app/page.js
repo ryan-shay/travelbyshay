@@ -86,7 +86,8 @@ export default function Home() {
           worldwide, including direct relationships with the
           world’s leading properties like Four Seasons, Aman, Rosewood, and
           beyond. Because we work directly with these hotels, you pay the same
-          rate you’d find booking yourself, and our service costs you nothing.
+          rate you’d find booking yourself. The hotels compensate us directly, so
+          there’s never a markup or a fee to you.
           Years spent traveling and working inside luxury hospitality mean we
           also know the people on property who’ll actually be taking care of you
           while you’re there.
