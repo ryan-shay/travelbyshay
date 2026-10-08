@@ -37,9 +37,13 @@ export default function Home() {
           <p className="card-title rise" style={{ "--d": "0.4s" }}>
             Luxury Travel Concierge
           </p>
-          <p className="card-inquiry rise" style={{ "--d": "0.55s" }}>
-            Make an inquiry below
-          </p>
+          <a
+            className="card-inquiry rise"
+            style={{ "--d": "0.55s" }}
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Travel inquiry")}`}
+          >
+            Make an inquiry
+          </a>
           <p className="card-contact rise" style={{ "--d": "0.7s" }}>
             <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
@@ -55,11 +59,21 @@ export default function Home() {
       </section>
 
       <section id="about" className="about">
-        <Reveal as="h2" className="about-name">
-          Troy Shay
-        </Reveal>
-        <Reveal as="p" className="about-role">
-          Founder, Troy Shay Travel
+        <Reveal className="about-byline">
+          <div className="about-portrait">
+            <Image
+              src="/troy-shay.jpg"
+              alt="Portrait of Troy Shay"
+              width={1280}
+              height={1599}
+              sizes="96px"
+              quality={85}
+            />
+          </div>
+          <div>
+            <h2 className="about-name">Troy Shay</h2>
+            <p className="about-role">Founder, Troy Shay Travel</p>
+          </div>
         </Reveal>
         <Reveal as="p" className="about-lede">
           The best trips happen when someone else is handling everything behind

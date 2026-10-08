@@ -9,10 +9,24 @@ const serif = EB_Garamond({
   display: "swap",
 });
 
+const description =
+  "Troy Shay, luxury travel concierge. Hotels, villas, yachts and private travel, handled personally.";
+
+// The link preview image is app/opengraph-image.png (and twitter-image.png).
 export const metadata = {
+  metadataBase: new URL("https://troyshaytravel.com"),
   title: "Troy Shay — Luxury Travel Concierge",
-  description:
-    "Troy Shay, luxury travel concierge. Hotels, villas, yachts and private travel, handled personally.",
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "Troy Shay Travel",
+    title: "Troy Shay — Luxury Travel Concierge",
+    description,
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export const viewport = {
