@@ -96,7 +96,7 @@ export const DEFAULT_PARTNER = {
       },
     ],
     after: [
-      "There is no cost to you. You know your clients best, so the timing is yours: an upcoming honeymoon, an anniversary, or simply a client who loves to travel well. The credit is presented as a gift from you.",
+      "There is no cost to you. You know your clients best, so the timing is yours: an upcoming honeymoon, an anniversary, or simply a client who loves to travel well. The offer is presented as a gift from you.",
     ],
   },
 };
