@@ -107,7 +107,6 @@ export const PARTNERS = {
     title: "Partnership Overview for Oscar de la Renta Beverly Hills · Troy Shay Travel",
     description:
       "A partnership overview prepared for Oscar de la Renta Beverly Hills by Troy Shay Travel, a luxury travel concierge working by referral only.",
-    tagline: "Exceptional honeymoons for the brides you dress",
     // Text for now; swap for logos once the files arrive.
     hotelPartners: {
       names: [
@@ -122,14 +121,15 @@ export const PARTNERS = {
       ],
     },
     letter: {
-      salutation: "Dear Oscar de la Renta Beverly Hills Team,",
+      salutation: "Dear Sepideh and the Oscar de la Renta Beverly Hills Team,",
       paragraphs: [
-        "Troy Shay Travel is a luxury travel concierge, and we work by referral only.",
-        "For every bride you refer to us, I would like to offer a $1,000 credit toward a future stay with any of my preferred hotel partners, presented as a gift from your team.",
-        "Over the years I have built close friendships with the people behind some of the world’s finest hotels. Those relationships allow me to arrange something personal for each couple, from the first conversation to the moment they return home.",
-        "This overview covers who we are, what your brides receive, and how a honeymoon comes together.",
-        "If it feels like a good fit once you have read through, I would welcome the chance to continue the conversation.",
+        "Your brides trust you with one of the most important days of their lives. I would be honored to enhance this momentous event by offering a $1,000 credit toward a future stay with any of my preferred hotel partners, to be presented by your team as a gift to the brides you choose.",
+        "Troy Shay Travel is a luxury travel concierge, and our clients come to us by referral. Over the years I have built close friendships with the people behind some of the world’s finest hotels. Those relationships allow me to arrange something personal for each couple, from our first conversation to the moment they return home.",
+        "This overview shares who we are, what your brides receive, and how a honeymoon comes together. If it feels like a good fit, I would welcome the chance to continue the conversation.",
       ],
+      closing: "Best,",
+      signature: "Troy",
+      role: null,
     },
     whoWeAre: {
       extra: {
@@ -140,7 +140,7 @@ export const PARTNERS = {
     receive: {
       lead: {
         title: "A $1,000 credit for every couple",
-        body: "Couples who book through me receive $1,000 toward a future stay at any of the preferred partners listed above, on top of everything below.",
+        body: "Couples who book through me receive $1,000 toward a future stay at any of the preferred partners listed above, in addition to everything below.",
       },
       items: [
         {
