@@ -94,9 +94,13 @@ export default function PartnershipDoc({ partner }) {
         <p key={text}>{text}</p>
       ))}
       <div className="doc-signoff">
-        <p>With warm regards,</p>
-        <p className="doc-signature">Troy Shay</p>
-        <p className="doc-signature-role">Founder, Troy Shay Travel</p>
+        <p>{letter.closing ?? "With warm regards,"}</p>
+        <p className="doc-signature">{letter.signature ?? "Troy Shay"}</p>
+        {letter.role !== null && (
+          <p className="doc-signature-role">
+            {letter.role ?? "Founder, Troy Shay Travel"}
+          </p>
+        )}
       </div>
     </section>,
 
@@ -233,9 +237,11 @@ export default function PartnershipDoc({ partner }) {
             <p className="doc-mark">Troy Shay Travel</p>
             <p className="doc-kicker">By Introduction</p>
             <h1 className="doc-title">Partnership Overview</h1>
-            <p className="doc-sub">
-              <em>{partner.tagline}</em>
-            </p>
+            {partner.tagline && (
+              <p className="doc-sub">
+                <em>{partner.tagline}</em>
+              </p>
+            )}
             <dl className="doc-meta">
               <div>
                 <dt>Prepared by</dt>
