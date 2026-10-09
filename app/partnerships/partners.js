@@ -168,7 +168,7 @@ export const PARTNERS = {
       // Written as an invitation until the boutique confirms the cake and note.
       extra: {
         title: "A Welcome from Oscar de la Renta",
-        body: "If your team would like to be part of the arrival, a custom Oscar de la Renta cake can be waiting when the newlyweds reach their first hotel, inscribed with their names and mine. Beside it, a note from the sales associate or manager who dressed the bride would wish the couple a wonderful honeymoon and thank them for their trust.",
+        body: "If your team would like to be part of the arrival, a custom Oscar de la Renta cake can be waiting when the newlyweds reach their first hotel, inscribed with their names. Beside it, a note from the bridal stylist and/or manager who dressed the bride would wish the couple a wonderful honeymoon and thank them for their trust.",
       },
     },
     how: {
