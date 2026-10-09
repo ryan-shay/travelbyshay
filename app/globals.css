@@ -987,6 +987,24 @@ img {
   margin-top: 0;
 }
 
+.doc-subsection {
+  margin-top: 32px;
+  break-inside: avoid;
+}
+
+.doc-subsection p {
+  margin-top: 6px;
+}
+
+/* Hotel partners listed by name on the cover, until logos are available. */
+.doc-partners-names {
+  max-width: 520px;
+  margin: 14px auto 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
 .doc-highlight strong,
 .doc-list strong,
 .doc-numbered strong,
