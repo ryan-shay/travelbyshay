@@ -182,7 +182,7 @@ export const PARTNERS = {
       ],
       after: [
         "Once everything is confirmed, I coordinate the cake and note with your team.",
-        "There is no cost to you. You know your brides best, so the timing is yours. The credit is presented as a gift from you.",
+        "There is no cost to you. You know your brides best, so the timing is yours. The offer is presented as a gift from you.",
       ],
     },
   },
