@@ -80,28 +80,32 @@ export default function Home() {
           </p>
         </Reveal>
         <Reveal as="h3" className="about-heading">
-          Time Is Precious
+          Tailored to You
         </Reveal>
         <Reveal as="p" className="about-text">
-          Troy Shay Travel is a full-service travel concierge. From a weekend
-          getaway to an African safari, every trip receives the same care,
-          because every trip matters.
+          Troy Shay Travel is a full-service travel concierge. Clients travel
+          differently, so every trip is planned from scratch, never from a
+          template.
         </Reveal>
         <Reveal as="p" className="about-text">
-          Our team handles every detail, from the first idea to the moment
-          you’re home, and we’re available around the clock while you’re away.
-          That leaves you free to simply enjoy it.
+          Before anything is booked, we learn how you like to travel: the pace,
+          the rooms, the dinners worth remembering. Our proposals are detailed,
+          with clear recommendations on where to stay and what to do, so the
+          trip comes together without the legwork.
+        </Reveal>
+        <Reveal as="p" className="about-text">
+          From the first idea to the moment you’re home, someone is looking out
+          for you, and we’re available around the clock while you’re away. We
+          also arrange private access and VIP touches, like a meet and greet at
+          the airport or a museum after closing.
         </Reveal>
         <Reveal as="p" className="about-text">
           We work with luxury hotels, private villas, yacht charters and private
-          jets worldwide, with direct relationships at properties such as Four
-          Seasons, Aman and Rosewood. Because our partners compensate us
-          directly, you pay the same rate you’d find on your own, with no markup
-          and no planning fee. And because we know the people on property, you
-          arrive as a guest they’ve been expecting.
+          jets worldwide, and because we know the people on property, you arrive
+          as a guest they’ve been expecting.
         </Reveal>
         <Reveal as="p" className="about-close">
-          Tell us where you want to go. We’ll handle the rest.
+          Tell us where you want to go. We’ll design the rest.
         </Reveal>
       </section>
 
