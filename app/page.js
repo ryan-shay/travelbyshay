@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "./reveal";
-import Footer, { PHONE_DISPLAY, PHONE_HREF, EMAIL } from "./footer";
+import Footer, { EMAIL } from "./footer";
 
 // Each photo appears once. Photos are grouped into rows; within a row every
 // tile shares one height and its width follows `ratio` (width / height), so
@@ -43,7 +43,6 @@ export default function Home() {
             Thank you for your understanding.
           </p>
           <p className="card-contact rise" style={{ "--d": "0.7s" }}>
-            <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </p>
         </div>

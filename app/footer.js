@@ -1,13 +1,9 @@
-export const PHONE_DISPLAY = "+1 858 449 0335";
-export const PHONE_HREF = "tel:+18584490335";
 export const EMAIL = "info@troyshaytravel.com";
 export const SITE = "troyshaytravel.com";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
-      <span aria-hidden="true">·</span>
       <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
       <p className="footer-credentials">
         <span>Virtuoso Member</span>
