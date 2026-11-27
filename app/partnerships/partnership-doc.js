@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Footer, { PHONE_HREF, EMAIL, SITE } from "../footer";
+import Footer, { EMAIL, SITE } from "../footer";
 import PrintButton from "./print-button";
 
 // Shared layout for every partnership overview. Each partner's wording lives
@@ -209,7 +209,6 @@ export default function PartnershipDoc({ partner }) {
         <address className="doc-address">
           <strong>Troy Shay</strong>
           <span>Founder, Troy Shay Travel</span>
-          <a href={PHONE_HREF}>+1 (858) 449-0335</a>
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           <a href={`https://${SITE}`}>{SITE}</a>
         </address>
